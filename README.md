@@ -1,4 +1,4 @@
-#ToasterFX 音效资源 [![language: English](https://img.shields.io/badge/language-English-brightgreen)](README_en.md)
+# ToasterFX 音效资源 [![language: English](https://img.shields.io/badge/language-English-brightgreen)](README_en.md)
 [![toasterfx: 8.0+](https://img.shields.io/badge/toasterfx-1.0%2B-green)](./toasterfx)
 [![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
 

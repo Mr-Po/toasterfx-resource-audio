@@ -2,7 +2,7 @@
 [![toasterfx: 8.0+](https://img.shields.io/badge/toasterfx-1.0%2B-green)](./toasterfx)
 [![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
 
-[ToasterFX](./toasterfx) 的一个音效资源库。
+[ToasterFX](../../../toasterfx) 的一个音效资源库。
 
 ## 特性
 * 提供了随机气泡音
@@ -37,4 +37,4 @@ service.bomb("ToasterFX","Hello ToasterFX !",parameter,ToastTypes.INFO);
 ## 截图
 ![0990E73E5E9874011F4714F9AE73E146.gif](https://i.loli.net/2020/09/28/RPShGny2mKedi5r.gif)
 
-更多特性及样例请访问：[ToasterFX-DEMO](./toasterfx-demo)。
+更多特性及样例请访问：[ToasterFX-DEMO](../../../toasterfx-demo)。

@@ -15,11 +15,6 @@
  */
 package org.pomo.toasterfx.resource.audio.test;
 
-import javafx.collections.ObservableList;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Duration;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -28,8 +23,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.pomo.toasterfx.ToastBarToasterService;
-import org.pomo.toasterfx.ToasterFactory;
-import org.pomo.toasterfx.ToasterWindow;
 import org.pomo.toasterfx.model.ToastParameter;
 import org.pomo.toasterfx.model.impl.ToastTypes;
 import org.pomo.toasterfx.resource.audio.RandomBubbleAudio;
@@ -66,49 +59,9 @@ public class ToasterFXResourceAudioTest {
     @SneakyThrows
     public static void init() {
 
-        Stage stage = FxToolkit.registerPrimaryStage();
-
-        ToasterWindow window = new ToasterWindow() {
-
-            {
-                stage.setOpacity(0);
-                FxToolkit.setupScene(() -> new Scene(new Parent() {
-                }));
-            }
-
-            @Override
-            @SneakyThrows
-            public void show() {
-                FxToolkit.showStage();
-            }
-
-            @Override
-            @SneakyThrows
-            public void close() {
-                FxToolkit.hideStage();
-            }
-
-            @Override
-            public boolean isShowing() {
-                return stage.isShowing();
-            }
-
-            @Override
-            public ObservableList<String> getStylesheets() {
-                return stage.getScene().getStylesheets();
-            }
-
-            @Override
-            public Window getWindow() {
-                return stage;
-            }
-        };
-
-        ToasterFactory toasterFactory = new ToasterFactory();
-        toasterFactory.setWindow(window);
+        FxToolkit.registerPrimaryStage();
 
         toasterService = new ToastBarToasterService();
-        toasterService.setToasterFactory(toasterFactory);
         toasterService.initialize();
     }
 
@@ -118,7 +71,8 @@ public class ToasterFXResourceAudioTest {
     @AfterClass
     public static void destroy() {
 
-        FXUtils.smartLater(() -> toasterService.destroy());
+        if (toasterService != null)
+            FXUtils.smartLater(() -> toasterService.destroy());
 
         log.info("ToasterFX test end.");
     }
@@ -139,9 +93,8 @@ public class ToasterFXResourceAudioTest {
 
         for (int i = 0; i < 3; i++) {
 
-            toasterService.bomb("ToasterFX", "Hello ToasterFX !", parameter, ToastTypes.INFO, toast -> {
-                toast.setOnDestroy(it -> latch.countDown());
-            });
+            toasterService.bomb("ToasterFX", "Hello ToasterFX !", parameter,
+                    ToastTypes.INFO, toast -> toast.setOnDestroy(it -> latch.countDown()));
 
             TimeUnit.SECONDS.sleep(1);
         }

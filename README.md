@@ -1,6 +1,6 @@
 # ToasterFX 音效资源 [![language: English](https://img.shields.io/badge/language-English-brightgreen)](README_en.md)
 
-[![toasterfx: 8.0+](https://img.shields.io/badge/toasterfx-1.0%2B-green)](../../../toasterfx)
+[![toasterfx: 1.0.2+](https://img.shields.io/badge/toasterfx-1.0.2%2B-green)](../../../toasterfx)
 [![Build Status](https://travis-ci.com/Mr-Po/toasterfx-resource-audio.svg?branch=master)](https://travis-ci.com/Mr-Po/toasterfx-resource-audio)
 [![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
 
@@ -15,12 +15,12 @@ Maven：
 <dependency>
     <groupId>com.gitee.pomo</groupId>
     <artifactId>toasterfx-resource-audio</artifactId>
-    <version>1.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 Gradle：
 ```
-compile group: 'com.gitee.pomo', name: 'toasterfx-resource-audio', version: '1.0'
+compile group: 'com.gitee.pomo', name: 'toasterfx-resource-audio', version: '1.0.2'
 ```
 
 ## 使用

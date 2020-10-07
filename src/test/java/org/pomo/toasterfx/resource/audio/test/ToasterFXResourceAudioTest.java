@@ -94,18 +94,17 @@ public class ToasterFXResourceAudioTest {
                 .audio(RandomBubbleAudio.DEFAULT)
                 .build();
 
-        CountDownLatch latch = new CountDownLatch(3);
+        CountDownLatch latch = new CountDownLatch(1);
 
         for (int i = 0; i < 3; i++) {
 
             toasterService.bomb("ToasterFX", "Hello ToasterFX !", parameter,
-                    ToastTypes.INFO, toast -> toast.setOnDestroy(it -> {latch.countDown();
-                        System.out.println(".............--------------.............");}));
+                    ToastTypes.INFO, toast -> toast.setOnDock((it, node) -> latch.countDown()));
 
             TimeUnit.SECONDS.sleep(1);
         }
 
-        boolean flag = latch.await(30, TimeUnit.SECONDS);
+        boolean flag = latch.await(10, TimeUnit.SECONDS);
         Assert.assertTrue("wait timeout.", flag);
         this.handleException();
 

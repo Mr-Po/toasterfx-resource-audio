@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio/branch/master/graph/badge.svg)](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio)
 [![Maven Central](https://img.shields.io/maven-central/v/com.gitee.pomo/toasterfx-resource-audio/1)](https://search.maven.org/#search|ga|1|com.gitee.pomo.toasterfx-resource-audio)
 
-[![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/Mr-Po/toasterfx-resource-audio?color=blue)](LICENSE)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio?ref=badge_shield)
 
 [ToasterFX](../../../toasterfx) 的一个音效资源库。

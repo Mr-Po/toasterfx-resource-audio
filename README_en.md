@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/Mr-Po/toasterfx-resource-audio.svg?branch=master)](https://travis-ci.com/Mr-Po/toasterfx-resource-audio)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/github/Mr-Po/toasterfx-resource-audio?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Mr-Po/toasterfx-resource-audio/context:java)
+[![codecov](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio/branch/master/graph/badge.svg)](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio)
 [![Maven Central](https://img.shields.io/maven-central/v/com.gitee.pomo/toasterfx-resource-audio/1)](https://search.maven.org/#search|ga|1|com.gitee.pomo.toasterfx-resource-audio)
 
 [![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)

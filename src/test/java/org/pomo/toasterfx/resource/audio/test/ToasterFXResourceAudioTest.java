@@ -99,7 +99,8 @@ public class ToasterFXResourceAudioTest {
         for (int i = 0; i < 3; i++) {
 
             toasterService.bomb("ToasterFX", "Hello ToasterFX !", parameter,
-                    ToastTypes.INFO, toast -> toast.setOnDestroy(it -> latch.countDown()));
+                    ToastTypes.INFO, toast -> toast.setOnDestroy(it -> {latch.countDown();
+                        System.out.println(".............--------------.............");}));
 
             TimeUnit.SECONDS.sleep(1);
         }

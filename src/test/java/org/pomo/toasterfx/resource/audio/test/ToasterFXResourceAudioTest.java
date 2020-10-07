@@ -18,6 +18,7 @@ package org.pomo.toasterfx.resource.audio.test;
 import javafx.util.Duration;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.util.Throwables;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -28,6 +29,7 @@ import org.pomo.toasterfx.model.impl.ToastTypes;
 import org.pomo.toasterfx.resource.audio.RandomBubbleAudio;
 import org.pomo.toasterfx.util.FXUtils;
 import org.testfx.api.FxToolkit;
+import org.testfx.util.WaitForAsyncUtils;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -84,6 +86,9 @@ public class ToasterFXResourceAudioTest {
     @SneakyThrows
     public void execute() {
 
+        WaitForAsyncUtils.autoCheckException = false;
+        WaitForAsyncUtils.printException = false;
+
         ToastParameter parameter = ToastParameter.builder()
                 .timeout(Duration.seconds(3))
                 .audio(RandomBubbleAudio.DEFAULT)
@@ -101,7 +106,41 @@ public class ToasterFXResourceAudioTest {
 
         boolean flag = latch.await(10, TimeUnit.SECONDS);
         Assert.assertTrue("wait timeout.", flag);
+        this.handleException();
+
+        WaitForAsyncUtils.autoCheckException = true;
+        WaitForAsyncUtils.printException = true;
 
         log.info("ToasterFX audio test success.");
+    }
+
+    /**
+     * <h2>处理异常</h2>
+     */
+    private void handleException() {
+
+        while (true) {
+
+            try {
+
+                WaitForAsyncUtils.checkException();
+
+            } catch (Throwable throwable) {
+
+                Throwable rootCause = Throwables.getRootCause(throwable);
+
+                // 排除 无法创建音频播放器的异常
+                if (!("com.sun.media.jfxmedia.MediaException".equals(rootCause.getClass().getName())
+                        && "Could not create player!".equals(rootCause.getMessage()))) {
+
+                    Assert.fail(Throwables.getRootCause(throwable).getMessage());
+
+                } else log.debug("a MediaException was ignored.");
+
+                continue;
+            }
+
+            break;
+        }
     }
 }

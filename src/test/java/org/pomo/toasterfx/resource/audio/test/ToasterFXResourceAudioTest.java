@@ -90,7 +90,7 @@ public class ToasterFXResourceAudioTest {
         WaitForAsyncUtils.printException = false;
 
         ToastParameter parameter = ToastParameter.builder()
-                .timeout(Duration.seconds(3))
+                .timeout(Duration.seconds(1))
                 .audio(RandomBubbleAudio.DEFAULT)
                 .build();
 
@@ -104,7 +104,7 @@ public class ToasterFXResourceAudioTest {
             TimeUnit.SECONDS.sleep(1);
         }
 
-        boolean flag = latch.await(20, TimeUnit.SECONDS);
+        boolean flag = latch.await(30, TimeUnit.SECONDS);
         Assert.assertTrue("wait timeout.", flag);
         this.handleException();
 

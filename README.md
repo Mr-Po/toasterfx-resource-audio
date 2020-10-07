@@ -3,6 +3,7 @@
 [![toasterfx: 8.0+](https://img.shields.io/badge/toasterfx-1.0%2B-green)](../../../toasterfx)
 [![Build Status](https://travis-ci.com/Mr-Po/toasterfx-resource-audio.svg?branch=master)](https://travis-ci.com/Mr-Po/toasterfx-resource-audio)
 [![Apache License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio?ref=badge_shield)
 
 [ToasterFX](../../../toasterfx) 的一个音效资源库。
 
@@ -40,3 +41,6 @@ service.bomb("ToasterFX","Hello ToasterFX !",parameter,ToastTypes.INFO);
 ![0990E73E5E9874011F4714F9AE73E146.gif](https://i.loli.net/2020/09/28/RPShGny2mKedi5r.gif)
 
 更多特性及样例请访问：[ToasterFX-DEMO](../../../toasterfx-demo)。
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio?ref=badge_large)

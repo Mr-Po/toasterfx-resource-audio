@@ -104,7 +104,7 @@ public class ToasterFXResourceAudioTest {
             TimeUnit.SECONDS.sleep(1);
         }
 
-        boolean flag = latch.await(10, TimeUnit.SECONDS);
+        boolean flag = latch.await(20, TimeUnit.SECONDS);
         Assert.assertTrue("wait timeout.", flag);
         this.handleException();
 

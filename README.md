@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/Mr-Po/toasterfx-resource-audio.svg?branch=master)](https://travis-ci.com/Mr-Po/toasterfx-resource-audio)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/github/Mr-Po/toasterfx-resource-audio?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Mr-Po/toasterfx-resource-audio/context:java)
 [![codecov](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio/branch/master/graph/badge.svg)](https://codecov.io/gh/Mr-Po/toasterfx-resource-audio)
-[![Maven Central](https://img.shields.io/maven-central/v/com.gitee.pomo/toasterfx-resource-audio/1)](https://search.maven.org/#search|ga|1|com.gitee.pomo.toasterfx-resource-audio)
+[![Maven Central](https://img.shields.io/maven-central/v/com.gitee.pomo/toasterfx-resource-audio)](https://search.maven.org/#search|ga|1|com.gitee.pomo.toasterfx-resource-audio)
 
 [![License](https://img.shields.io/github/license/Mr-Po/toasterfx-resource-audio?color=blue)](LICENSE)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FMr-Po%2Ftoasterfx-resource-audio?ref=badge_shield)

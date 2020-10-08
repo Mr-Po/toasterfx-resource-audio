@@ -19,10 +19,7 @@ import javafx.util.Duration;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Throwables;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.pomo.toasterfx.ToastBarToasterService;
 import org.pomo.toasterfx.model.ToastParameter;
 import org.pomo.toasterfx.model.impl.ToastTypes;
@@ -65,6 +62,9 @@ public class ToasterFXResourceAudioTest {
 
         toasterService = new ToastBarToasterService();
         toasterService.initialize();
+
+        WaitForAsyncUtils.autoCheckException = false;
+        WaitForAsyncUtils.printException = false;
     }
 
     /**
@@ -73,10 +73,20 @@ public class ToasterFXResourceAudioTest {
     @AfterClass
     public static void destroy() {
 
+        WaitForAsyncUtils.autoCheckException = true;
+        WaitForAsyncUtils.printException = true;
+
         if (toasterService != null)
             FXUtils.smartLater(() -> toasterService.destroy());
 
         log.info("ToasterFX test end.");
+    }
+
+    @After
+    public void finish() {
+
+        this.handleException();
+        log.info("ToasterFX audio test success.");
     }
 
     /**
@@ -85,9 +95,6 @@ public class ToasterFXResourceAudioTest {
     @Test
     @SneakyThrows
     public void execute() {
-
-        WaitForAsyncUtils.autoCheckException = false;
-        WaitForAsyncUtils.printException = false;
 
         ToastParameter parameter = ToastParameter.builder()
                 .timeout(Duration.seconds(1))
@@ -106,12 +113,8 @@ public class ToasterFXResourceAudioTest {
 
         boolean flag = latch.await(20, TimeUnit.SECONDS);
         Assert.assertTrue("wait timeout.", flag);
-        this.handleException();
 
-        WaitForAsyncUtils.autoCheckException = true;
-        WaitForAsyncUtils.printException = true;
-
-        log.info("ToasterFX audio test success.");
+        RandomBubbleAudio.DEFAULT.stop();
     }
 
     /**

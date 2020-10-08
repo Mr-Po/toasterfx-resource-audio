@@ -7,7 +7,7 @@
 
     <groupId>com.gitee.pomo</groupId>
     <artifactId>toasterfx-resource-audio</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
 	<packaging>jar</packaging>
 
     <!--region 项目描述-->
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>com.gitee.pomo</groupId>
             <artifactId>toasterfx</artifactId>
-            <version>1.0.2-SNAPSHOT</version>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>
